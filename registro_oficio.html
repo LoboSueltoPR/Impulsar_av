@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar servicio — Parte 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/community_icon.svg" type="image/x-icon">
+</head>
+<body>
+    <section class="hero">
+        <div class="container-sm">
+            <div class="form-card">
+                <h1 class="text-xl text-center">Tu oficio o servicio</h1>
+                <p class="text-center">Parte 2 de 2 — Contanos en qué trabajás. Podés cargar más de uno.</p>
+ 
+                <div id="avisoSinId" class="form-mensaje error" hidden>
+                    No pudimos identificar tu registro. <a href="registro.html">Volvé a la Parte 1</a> e intentá de nuevo.
+                </div>
+ 
+                <div id="formularioOficios">
+ 
+                    <div class="oficio-selector">
+                        <div class="form-group">
+                            <label for="selectRubro">Rubro</label>
+                            <select id="selectRubro">
+                                <option value="" selected disabled>Seleccioná un rubro</option>
+                            </select>
+                        </div>
+ 
+                        <div class="form-group" id="grupoOficio" hidden>
+                            <label>Oficio o servicio <span class="opcional">(podés elegir varios)</span></label>
+                            <div id="checksOficios" class="checks-certificaciones"></div>
+                        </div>
+ 
+                        <div class="form-group" id="grupoOficioOtro" hidden>
+                            <label for="inputOficioOtro">Contanos cuál es tu oficio o servicio</label>
+                            <input type="text" id="inputOficioOtro" placeholder="Ej: jardinería">
+                        </div>
+ 
+                        <div class="form-group" id="grupoCertificaciones" hidden>
+                            <label>Certificaciones <span class="opcional">(podés elegir varias)</span></label>
+                            <div id="checksCertificaciones" class="checks-certificaciones"></div>
+                            <input type="text" id="inputCertOtra" placeholder="¿Tenés alguna otra certificación que no está en la lista? Escribila acá" class="cert-otra-input">
+                        </div>
+ 
+                        <div class="form-group">
+                            <label for="inputDescripcion">Contanos tu experiencia <span class="opcional">(opcional)</span></label>
+                            <textarea id="inputDescripcion" rows="3" placeholder="Ej: hace 5 años que trabajo de esto, hice reformas en varias casas del barrio..."></textarea>
+                        </div>
+ 
+                        <div class="form-group">
+                            <label for="inputMediaTrabajo">Fotos o videos de trabajos hechos <span class="opcional">(opcional, hasta 10 archivos)</span></label>
+                            <input type="file" id="inputMediaTrabajo" accept="image/png, image/jpeg, image/webp, video/mp4, video/webm, video/quicktime" multiple>
+                            <span class="ayuda">Fotos: JPG/PNG/WEBP hasta 3MB — Videos: MP4/WEBM/MOV hasta 15MB</span>
+                            <div id="previewMediaTrabajo" class="preview-media-lista"></div>
+                        </div>
+ 
+                        <button type="button" id="btnAgregarOficio" class="btn btn-primary" disabled>
+                            + Agregar este oficio/servicio
+                        </button>
+                    </div>
+ 
+                    <div id="oficiosCargados" class="oficios-cargados"></div>
+ 
+                    <div id="formMensajeOficios" class="form-mensaje"></div>
+ 
+                    <button type="button" id="btnFinalizar" class="btn btn-primary btn-block" disabled>
+                        Finalizar registro
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <script src="js/desplegable_form.js"></script>
+    <script src="js/registro_oficio.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <!-- <div class="footer-logo">
+                <img src="images/logo.ico" alt="logo Nexo de Tierras Argentinas">
+            </div> -->
+            <div class="footer-contacto">
+                Contacto: <a href="mailto:impulsar@gmail.com">impulsar@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

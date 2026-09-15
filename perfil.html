@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/community_icon.svg" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.ico" alt="logo">
+                </a>
+            </div>
+ 
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+ 
+            <div class="navbar-panel" id="navbarPanel">
+                <div class="navbar-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="buscadorServicios" placeholder="Buscar oficio o servicio...">
+                </div>
+ 
+                <div class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="landing.html">Acerca de</a>
+                        </li>
+                        <li>
+                            <a href="certificaciones.html">Certificaciones</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="#" id="navLoginBtn">
+                                <i class="fas fa-user"></i> Iniciar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+ 
+    <section class="hero">
+        <div class="container">
+ 
+            <a href="index.html" class="volver-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+ 
+            <div id="perfilContenido">
+                <p class="text-center" style="margin-top: 40px;">Cargando perfil...</p>
+            </div>
+ 
+        </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/seguimientos.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/perfil.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <!-- <div class="footer-logo">
+                <img src="images/logo.ico" alt="logo Nexo de Tierras Argentinas">
+            </div> -->
+            <div class="footer-contacto">
+                Contacto: <a href="mailto:impulsar@gmail.com">impulsar@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

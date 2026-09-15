@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/community_icon.svg" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.ico" alt="logo">
+                </a>
+            </div>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="navbar-panel" id="navbarPanel">
+                <div class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="landing.html">Acerca de</a>
+                        </li>
+                        <li>
+                            <a href="certificaciones.html">Certificaciones</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="#" id="navLoginBtn">
+                                <i class="fas fa-user"></i> Iniciar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+
+            <div id="panelEstado" class="text-center" style="margin-top: 40px;">
+                <p>Cargando tu panel...</p>
+            </div>
+
+            <div id="panelContenido" hidden>
+
+                <div class="panel-encabezado">
+                    <h1 class="text-lg">Mi panel</h1>
+                    <p class="panel-subtitulo">Acá podés ver cómo le está yendo a tu perfil y actualizar tus datos.</p>
+                </div>
+
+                <!-- Estadísticas -->
+                <div class="panel-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icono stat-icono-azul"><i class="fas fa-eye"></i></div>
+                        <div class="stat-numero" id="statVistasTotal">0</div>
+                        <div class="stat-etiqueta">Visitas a tu perfil</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icono stat-icono-verde"><i class="fas fa-comments"></i></div>
+                        <div class="stat-numero" id="statContactosTotal">0</div>
+                        <div class="stat-etiqueta">Veces que te contactaron</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icono stat-icono-amarillo"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-numero" id="statVistas30">0</div>
+                        <div class="stat-etiqueta">Visitas en los últimos 30 días</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icono stat-icono-morado"><i class="fas fa-percent"></i></div>
+                        <div class="stat-numero" id="statTasaContacto">0%</div>
+                        <div class="stat-etiqueta">De cada visita, te contactan</div>
+                    </div>
+                </div>
+
+                <div class="panel-detalle-grid">
+
+                    <!-- Gráfico de visitas de los últimos 30 días -->
+                    <div class="panel-card">
+                        <h2 class="text-md">Visitas por día <span class="panel-card-ayuda">(últimos 30 días)</span></h2>
+                        <div class="mini-chart" id="graficoVistas" aria-label="Gráfico de visitas por día"></div>
+                    </div>
+
+                    <!-- Desglose de contactos por tipo -->
+                    <div class="panel-card">
+                        <h2 class="text-md">Cómo te contactaron</h2>
+                        <div class="contactos-desglose" id="contactosDesglose"></div>
+                    </div>
+
+                </div>
+
+                <!-- Mis oficios y servicios -->
+                <div class="panel-card panel-oficios">
+                    <h2 class="text-md">Mis oficios y servicios</h2>
+                    <p class="panel-card-ayuda">Esto es lo que aparece en tu perfil público. Podés borrar lo que ya no ofrezcas.</p>
+
+                    <div class="oficios-cargados" id="misOficiosLista"></div>
+
+                    <a href="registro_oficio.html" class="panel-link-oficios" id="linkAgregarOficio">
+                        <i class="fas fa-plus"></i> Agregar otro oficio o servicio a mi perfil
+                    </a>
+                </div>
+
+                <!-- Editar perfil -->
+                <div class="panel-card panel-editar">
+                    <h2 class="text-md">Editar mi perfil</h2>
+                    <p class="panel-card-ayuda">Estos son los datos que va a ver la gente cuando entre a tu perfil público.</p>
+
+                    <form id="formEditarPerfil" class="registro-form" novalidate>
+
+                        <div class="form-group">
+                            <label>Foto de perfil</label>
+                            <div class="editar-foto-row">
+                                <img id="previewFotoActual" class="preview-foto" alt="Tu foto de perfil">
+                                <div class="editar-foto-controles">
+                                    <input type="file" id="foto" name="foto" accept="image/png, image/jpeg, image/webp">
+                                    <span class="ayuda">JPG, PNG o WEBP — máximo 3MB. Dejalo vacío para mantener tu foto actual.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                                <span class="campo-error" id="errorNombre"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                                <span class="campo-error" id="errorApellido"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input type="number" id="edad" name="edad" min="16" max="99" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="celular">Número de celular</label>
+                                <input type="tel" id="celular" name="celular" placeholder="291-455-1023" required>
+                                <span class="campo-error" id="errorCelular"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="campo-error" id="errorEmail"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instagram">Instagram <span class="opcional">(opcional)</span></label>
+                            <input type="text" id="instagram" name="instagram" placeholder="@usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estudios">Estudios completos</label>
+                            <select id="estudios" name="estudios" required>
+                                <option value="primario">Primario</option>
+                                <option value="secundario">Secundario</option>
+                                <option value="terciario">Terciario</option>
+                                <option value="universitario">Universitario</option>
+                            </select>
+                        </div>
+
+                        <div id="editarMensaje" class="form-mensaje"></div>
+
+                        <button type="submit" class="btn btn-primary" id="btnGuardarPerfil">
+                            Guardar cambios
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/seguimientos.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/panel.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-contacto">
+                Contacto: <a href="mailto:impulsar@gmail.com">impulsar@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

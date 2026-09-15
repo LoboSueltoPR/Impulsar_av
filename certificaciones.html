@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/community_icon.svg" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.ico" alt="logo">
+                </a>
+            </div>
+ 
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+ 
+            <div class="navbar-panel" id="navbarPanel">
+                <div class="navbar-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="buscadorServicios" placeholder="Buscar oficio o servicio...">
+                </div>
+ 
+                <div class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="landing.html">Acerca de</a>
+                        </li>
+                        <li>
+                            <a href="certificaciones.html">Certificaciones</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="#" id="navLoginBtn">
+                                <i class="fas fa-user"></i> Iniciar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+ 
+    <section class="hero">
+        <div class="container">
+            <h1 class="text-xl text-center">Dónde capacitarte</h1>
+            <p class="text-center certif-intro">
+                Estos son los lugares del barrio y la ciudad donde podés hacer cursos y sacar
+                certificaciones para tu oficio. Antes de anotarte, confirmá horarios y cupos
+                directamente en cada institución.
+            </p>
+ 
+            <div class="certif-leyenda">
+                <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito</span>
+                <span class="certif-badge badge-mixto"><i class="fas fa-info-circle"></i> Gratuito y pago</span>
+                <span class="certif-badge badge-consultar"><i class="fas fa-question-circle"></i> Consultar costo</span>
+            </div>
+ 
+            <div class="certif-grid">
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>NIDO Vista Alegre</h3>
+                        <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Nicolás Pérez 1997 — <a class="certif-direccion-link" href="https://www.google.com/maps/search/?api=1&query=Nicol%C3%A1s%20P%C3%ADrez%201997%2C%20Bah%C3%ADa%20Blanca%2C%20Argentina" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914550210"><i class="fas fa-phone"></i> 291 455-0210</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Costura</span>
+                        <span class="curso-chip">Cocina</span>
+                        <span class="curso-chip">Alfabetización Digital</span>
+                        <span class="curso-chip">Apoyo a Emprendedores</span>
+                    </div>
+                </div>
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>PEC Tierras Argentinas</h3>
+                        <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Pampa Central 3416 — <a class="certif-direccion-link" href="https://www.google.com/maps/search/?api=1&query=Pampa%20Central%203416%2C%20Bah%C3%ADa%20Blanca%2C%20Argentina" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914594000"><i class="fas fa-phone"></i> 291 459-4000 (Municipalidad)</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Marroquinería</span>
+                        <span class="curso-chip">Huerta</span>
+                        <span class="curso-chip">Manipulación de Alimentos (Jornadas)</span>
+                        <span class="curso-chip">RCP</span>
+                    </div>
+                </div>
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>Escuela Municipal de Capacitación Laboral San Roque</h3>
+                        <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> De Angelis 45 — <a class="certif-direccion-link" href="https://maps.app.goo.gl/DA6noXdBQeiVmd7P7" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914484242"><i class="fas fa-phone"></i> 291 448-4242</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Gasista</span>
+                        <span class="curso-chip">Plomería</span>
+                        <span class="curso-chip">Barbería</span>
+                        <span class="curso-chip">Estética</span>
+                        <span class="curso-chip">Cuidados Gerontológicos</span>
+                    </div>
+                </div>
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>CFP N° 405</h3>
+                        <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito con título oficial</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Mitre 201 — <a class="certif-direccion-link" href="https://www.google.com/maps/search/?api=1&query=Mitre%20201%2C%20Bah%C3%ADa%20Blanca%2C%20Argentina" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914064317"><i class="fas fa-phone"></i> 291 406-4317</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Albañilería</span>
+                        <span class="curso-chip">Durlock</span>
+                        <span class="curso-chip">Carpintería</span>
+                        <span class="curso-chip">Herrería y Soldadura</span>
+                    </div>
+                </div>
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>CFP N° 402 "La Piedad"</h3>
+                        <span class="certif-badge badge-gratis"><i class="fas fa-check"></i> Gratuito con título oficial</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Necochea 1015 — <a class="certif-direccion-link" href="https://maps.app.goo.gl/kXyC4VvtcTwXjc4z5" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914823505"><i class="fas fa-phone"></i> 291 482-3505</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Electricidad Domiciliaria</span>
+                        <span class="curso-chip">Mecánica</span>
+                        <span class="curso-chip">Confección Textil</span>
+                    </div>
+                </div>
+ 
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>UNS (Centros de Extensión)</h3>
+                        <span class="certif-badge badge-mixto"><i class="fas fa-info-circle"></i> Gratuitos y arancelados</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Rondeau 29 — <a class="certif-direccion-link" href="https://maps.app.goo.gl/g191V7PeKF3YVNLd7" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Avenida Colón 80 — <a class="certif-direccion-link" href="https://www.google.com/maps/search/?api=1&query=Avenida%20Col%C3%B3n%2080%2C%20Bah%C3%ADa%20Blanca%2C%20Argentina" target="_blank" rel="noopener">Ver dirección en mapa</a></p>
+                    <a class="certif-telefono" href="tel:+542914595000"><i class="fas fa-phone"></i> 0291 459-5000</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Chapa y Pintura</span>
+                        <span class="curso-chip">Soldadura Avanzada</span>
+                        <span class="curso-chip">Costos y Marketing Digital</span>
+                    </div>
+                </div>
+
+                <div class="certif-card">
+                    <div class="certif-card-header">
+                        <h3>UTN (Centros de Extensión)</h3>
+                        <span class="certif-badge badge-mixto"><i class="fas fa-info-circle"></i> Gratuitos y arancelados</span>
+                    </div>
+                    <p class="certif-direccion"><i class="fas fa-location-dot"></i> Montevideo 340 — <a class="certif-direccion-link" href="https://maps.app.goo.gl/8dSNg7r7qyt4WDbXA" target="_blank" rel="noopener">Ver dirección en mapa</a></p>           
+                    <a class="certif-telefono" href="tel:+542914557109"><i class="fas fa-phone"></i> 291-4557109</a>
+                    <div class="certif-cursos">
+                        <span class="curso-chip">Chapa y Pintura</span>
+                        <span class="curso-chip">Soldadura Avanzada</span>
+                        <span class="curso-chip">Costos y Marketing Digital</span>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="site-footer">
+        <div class="container">
+            <!-- <div class="footer-logo">
+                <img src="images/logo.ico" alt="logo Nexo de Tierras Argentinas">
+            </div> -->
+            <div class="footer-contacto">
+                Contacto: <a href="mailto:impulsar@gmail.com">impulsar@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="js/auth.js"></script>
+    <script src="js/seguimientos.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

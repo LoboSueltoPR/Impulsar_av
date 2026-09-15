@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer contraseña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/community_icon.svg" type="image/x-icon">
+</head>
+<body>
+    <section class="hero">
+        <div class="container-sm">
+            <div class="form-card">
+                <h1 class="text-xl text-center">Elegí tu nueva contraseña</h1>
+
+                <div id="avisoSinToken" class="form-mensaje error" hidden>
+                    Este link no es válido. <a href="index.html">Volvé al inicio</a>.
+                </div>
+
+                <form id="formRestablecer" class="registro-form" novalidate>
+                    <div class="form-group">
+                        <label for="passwordNueva">Nueva contraseña</label>
+                        <input type="password" id="passwordNueva" minlength="6" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordNueva2">Repetir contraseña</label>
+                        <input type="password" id="passwordNueva2" minlength="6" required>
+                    </div>
+
+                    <div id="formMensaje" class="form-mensaje"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="btnConfirmar">Confirmar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/logo.ico" alt="logo Nexo de Tierras Argentinas">
+            </div>
+            <div class="footer-contacto">
+                Contacto: <a href="mailto:contacto@nexotierrasargentinas.org">contacto@nexotierrasargentinas.org</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/restablecer.js"></script>
+</body>
+</html>
