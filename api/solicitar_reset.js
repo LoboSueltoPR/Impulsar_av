@@ -50,8 +50,11 @@ export default async function handler(req, res) {
     VALUES (${tipo}, ${identificador}, ${email}, ${token}, now() + INTERVAL '1 hour')
   `;
 
-  json(res, 200, generica);
-
+  /* El aviso va ANTES de responder, no después.
+     En PHP el script seguía corriendo después del echo; en Vercel la función se
+     congela apenas se cierra la respuesta, así que un await posterior no tiene
+     garantía de ejecutarse — y este mail es justamente para lo que existe el
+     endpoint. avisarAMake ya corta a los 8 segundos. */
   const base = process.env.SITE_URL || `https://${req.headers.host}`;
   await avisarAMake({
     tipo: "recuperar_password",
@@ -59,4 +62,6 @@ export default async function handler(req, res) {
     nombre,
     link: `${base}/restablecer.html?token=${token}`
   });
+
+  json(res, 200, generica);
 }

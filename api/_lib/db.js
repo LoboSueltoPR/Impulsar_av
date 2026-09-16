@@ -20,6 +20,18 @@ export const sql = postgres(process.env.DATABASE_URL, {
   connect_timeout: 10
 });
 
+/* La columna `certificaciones` guarda un JSON, pero puede venir mal formada en
+   filas viejas. El PHP hacía json_decode(...) ?: [] — nunca reventaba. Con un
+   JSON.parse pelado, una sola fila rota tira abajo el perfil entero. */
+export function decodificarCertificaciones(valor) {
+  try {
+    const d = JSON.parse(valor || "[]");
+    return Array.isArray(d) ? d : [];
+  } catch {
+    return [];
+  }
+}
+
 /* La columna `oficio` guarda a veces un JSON y a veces un string suelto.
    Misma función que tenía db.php. */
 export function decodificarOficios(valor) {

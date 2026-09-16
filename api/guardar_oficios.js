@@ -9,6 +9,11 @@ import {
   MAX_FOTO, MAX_VIDEO, MAX_ARCHIVOS_POR_OFICIO
 } from "./_lib/archivos.js";
 
+/* Llegan archivos (multipart). Vercel solo parsea el body cuando el Content-Type
+   es application/json o x-www-form-urlencoded; con multipart deja el stream
+   intacto y formidable lo lee. Este `config` es la convención de Next.js y acá
+   no hace nada, pero se deja como señal de que el body NO viene parseado.
+   Si alguna vez una subida se queda colgada, mirar esto primero. */
 export const config = { api: { bodyParser: false } };
 
 export default async function handler(req, res) {

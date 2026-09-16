@@ -1,6 +1,6 @@
 /* Antes: api/get_panel_datos.php */
 
-import { sql, decodificarOficios } from "./_lib/db.js";
+import { sql, decodificarOficios, decodificarCertificaciones } from "./_lib/db.js";
 import { json, error } from "./_lib/http.js";
 import { exigirTrabajador } from "./_lib/sesion.js";
 import { BUCKETS, urlPublica } from "./_lib/archivos.js";
@@ -81,7 +81,7 @@ export default async function handler(req, res) {
       id: o.id,
       rubro: o.rubro,
       oficios: decodificarOficios(o.oficio),
-      certificaciones: JSON.parse(o.certificaciones || "[]"),
+      certificaciones: decodificarCertificaciones(o.certificaciones),
       descripcion: o.descripcion,
       media: o.media.map((m) => ({
         tipo: m.tipo,

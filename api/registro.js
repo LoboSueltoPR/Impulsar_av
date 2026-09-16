@@ -10,7 +10,11 @@ import {
 } from "./_lib/archivos.js";
 import { avisarAMake } from "./_lib/make.js";
 
-// Llegan archivos: hay que apagar el parser de JSON de Vercel
+/* Llegan archivos (multipart). Vercel solo parsea el body cuando el Content-Type
+   es application/json o x-www-form-urlencoded; con multipart deja el stream
+   intacto y formidable lo lee. Este `config` es la convención de Next.js y acá
+   no hace nada, pero se deja como señal de que el body NO viene parseado.
+   Si alguna vez una subida se queda colgada, mirar esto primero. */
 export const config = { api: { bodyParser: false } };
 
 export default async function handler(req, res) {
@@ -116,13 +120,14 @@ export default async function handler(req, res) {
     nombre: `${datos.nombre} ${datos.apellido}`
   });
 
-  json(res, 200, { ok: true, provider_id: slug });
-
-  // Igual que el PHP: se responde primero y después se avisa del mail
+  // Antes de responder: en Vercel la función se congela al cerrar la respuesta
+  // y lo que quede después no tiene garantía de correr (ver solicitar_reset.js)
   await avisarAMake({
     tipo: "bienvenida",
     email: datos.email,
     nombre: datos.nombre,
     apellido: datos.apellido
   });
+
+  json(res, 200, { ok: true, provider_id: slug });
 }
