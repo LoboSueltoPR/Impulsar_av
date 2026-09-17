@@ -55,7 +55,16 @@ export default async function handler(req, res) {
      congela apenas se cierra la respuesta, así que un await posterior no tiene
      garantía de ejecutarse — y este mail es justamente para lo que existe el
      endpoint. avisarAMake ya corta a los 8 segundos. */
-  const base = process.env.SITE_URL || `https://${req.headers.host}`;
+  /* El dominio del link NUNCA sale del pedido (header Host / X-Forwarded-Host):
+     quien pide el reset puede mandar cualquier valor ahí, y el mail le llega a la
+     persona real con un link a un dominio ajeno — si lo abre, el token se filtra.
+     Se usa SITE_URL o, si falta, el dominio de producción que informa Vercel. */
+  const base = sitioConfiable();
+  if (!base) {
+    console.error("solicitar_reset: falta SITE_URL, no se manda el mail");
+    return json(res, 200, generica);
+  }
+
   await avisarAMake({
     tipo: "recuperar_password",
     email,
@@ -64,4 +73,13 @@ export default async function handler(req, res) {
   });
 
   json(res, 200, generica);
+}
+
+function sitioConfiable() {
+  if (process.env.SITE_URL) return process.env.SITE_URL.replace(/\/+$/, "");
+  // Variable de sistema de Vercel: la pone la plataforma, no el pedido
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  return null;
 }
