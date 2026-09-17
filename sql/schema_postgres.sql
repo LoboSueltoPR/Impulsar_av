@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS oficios_media (
 -- Antes la clave única era (provider_id, ip_address) con REMOTE_ADDR. Detrás de
 -- un CDN o proxy esa es la IP del proxy, así que el primer voto bloqueaba a todos
 -- los demás. Se conserva la columna y la restricción, pero ahora se guarda la IP
--- real leída de X-Forwarded-For. Ver api/_lib/ip.js
+-- real leída de X-Forwarded-For. Ver ipDelCliente() en api/_lib/http.js
 CREATE TABLE IF NOT EXISTS ratings (
     id          integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     provider_id varchar(100) NOT NULL
