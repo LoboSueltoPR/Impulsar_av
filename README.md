@@ -67,8 +67,8 @@ Vercel, nunca en `js/`.
 
 1. Crear el proyecto en Supabase.
 2. Correr `sql/schema_postgres.sql` en el SQL Editor.
-3. Crear tres buckets **públicos** en Storage: `fotos-perfil`, `fotos-trabajo`,
-   `videos-trabajo`.
+3. Correr `sql/storage_buckets.sql`: crea los tres buckets públicos
+   (`fotos-perfil`, `fotos-trabajo`, `videos-trabajo`) con sus límites.
 4. Importar el repo en Vercel y cargar las variables de entorno.
 5. Migrar los datos que ya existen (abajo).
 6. Deploy.
