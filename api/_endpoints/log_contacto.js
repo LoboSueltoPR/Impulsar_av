@@ -6,8 +6,8 @@
  * Es una feature a medio hacer: no se portó. Ver README_SUPABASE.md
  */
 
-import { sql } from "./_lib/db.js";
-import { json, cuerpo } from "./_lib/http.js";
+import { sql } from "../_lib/db.js";
+import { json, cuerpo } from "../_lib/http.js";
 
 const TIPOS_VALIDOS = ["llamada", "whatsapp", "email", "instagram"];
 

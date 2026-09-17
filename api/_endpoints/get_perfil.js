@@ -1,8 +1,8 @@
 /* Antes: api/get_perfil.php */
 
-import { sql, decodificarOficios, decodificarCertificaciones } from "./_lib/db.js";
-import { json, error } from "./_lib/http.js";
-import { BUCKETS, urlPublica } from "./_lib/archivos.js";
+import { sql, decodificarOficios, decodificarCertificaciones } from "../_lib/db.js";
+import { json, error } from "../_lib/http.js";
+import { BUCKETS, urlPublica } from "../_lib/archivos.js";
 
 export default async function handler(req, res) {
   const providerId = (req.query.id || "").trim();

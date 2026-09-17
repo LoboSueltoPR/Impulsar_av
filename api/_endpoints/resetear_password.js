@@ -1,9 +1,9 @@
 /* Antes: api/resetear_password.php */
 
 import bcrypt from "bcryptjs";
-import { sql } from "./_lib/db.js";
-import { json, error, cuerpo, soloMetodo } from "./_lib/http.js";
-import { crearCookie } from "./_lib/sesion.js";
+import { sql } from "../_lib/db.js";
+import { json, error, cuerpo, soloMetodo } from "../_lib/http.js";
+import { crearCookie } from "../_lib/sesion.js";
 
 export default async function handler(req, res) {
   if (!soloMetodo(req, res, "POST")) return;

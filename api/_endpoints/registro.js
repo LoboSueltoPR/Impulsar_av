@@ -1,21 +1,17 @@
 /* Antes: api/registro.php — alta de trabajador, parte 1 */
 
 import bcrypt from "bcryptjs";
-import { sql } from "./_lib/db.js";
-import { json, error } from "./_lib/http.js";
-import { crearCookie } from "./_lib/sesion.js";
-import { validarTrabajador, generarSlug } from "./_lib/validar.js";
+import { sql } from "../_lib/db.js";
+import { json, error } from "../_lib/http.js";
+import { crearCookie } from "../_lib/sesion.js";
+import { validarTrabajador, generarSlug } from "../_lib/validar.js";
 import {
   parsearFormulario, subir, borrar, BUCKETS, TIPOS_FOTO, MAX_FOTO
-} from "./_lib/archivos.js";
-import { avisarAMake } from "./_lib/make.js";
+} from "../_lib/archivos.js";
+import { avisarAMake } from "../_lib/make.js";
 
-/* Llegan archivos (multipart). Vercel solo parsea el body cuando el Content-Type
-   es application/json o x-www-form-urlencoded; con multipart deja el stream
-   intacto y formidable lo lee. Este `config` es la convención de Next.js y acá
-   no hace nada, pero se deja como señal de que el body NO viene parseado.
-   Si alguna vez una subida se queda colgada, mirar esto primero. */
-export const config = { api: { bodyParser: false } };
+/* Llegan archivos (multipart): el body se lee crudo con formidable.
+   Ver el comentario de api/[ruta].js sobre no tocar req.body antes. */
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return error(res, 405, "Método no permitido");

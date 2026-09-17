@@ -1,9 +1,9 @@
 /* Antes: api/get_panel_datos.php */
 
-import { sql, decodificarOficios, decodificarCertificaciones } from "./_lib/db.js";
-import { json, error } from "./_lib/http.js";
-import { exigirTrabajador } from "./_lib/sesion.js";
-import { BUCKETS, urlPublica } from "./_lib/archivos.js";
+import { sql, decodificarOficios, decodificarCertificaciones } from "../_lib/db.js";
+import { json, error } from "../_lib/http.js";
+import { exigirTrabajador } from "../_lib/sesion.js";
+import { BUCKETS, urlPublica } from "../_lib/archivos.js";
 
 export default async function handler(req, res) {
   const sesion = exigirTrabajador(req, res);

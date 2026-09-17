@@ -40,9 +40,9 @@ export const MAX_FOTO = 3 * 1024 * 1024;
 export const MAX_VIDEO = 15 * 1024 * 1024;
 export const MAX_ARCHIVOS_POR_OFICIO = 10;
 
-/* Las funciones de Vercel parsean el body como JSON por defecto; para multipart
-   hay que apagarlo y parsear a mano. Cada endpoint que reciba archivos tiene que
-   exportar:  export const config = { api: { bodyParser: false } }; */
+/* Lee un formulario multipart directo del stream del pedido.
+   Vercel solo parsea req.body cuando alguien lo lee: mientras nadie lo toque
+   antes (ver api/[ruta].js), el stream llega entero hasta acá. */
 export function parsearFormulario(req, { maxBytes = MAX_VIDEO } = {}) {
   const form = formidable({
     multiples: true,

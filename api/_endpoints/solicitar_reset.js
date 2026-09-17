@@ -1,10 +1,10 @@
 /* Antes: api/solicitar_reset.php */
 
 import { randomBytes } from "node:crypto";
-import { sql } from "./_lib/db.js";
-import { json, cuerpo, soloMetodo } from "./_lib/http.js";
-import { esEmail } from "./_lib/validar.js";
-import { avisarAMake } from "./_lib/make.js";
+import { sql } from "../_lib/db.js";
+import { json, cuerpo, soloMetodo } from "../_lib/http.js";
+import { esEmail } from "../_lib/validar.js";
+import { avisarAMake } from "../_lib/make.js";
 
 export default async function handler(req, res) {
   if (!soloMetodo(req, res, "POST")) return;

@@ -14,7 +14,9 @@ mismos códigos de error. Lo que cambió es dónde corre.
 ```
 index.html, perfil.html, …   el frontend, HTML/CSS/JS vanilla, sin build
 css/  images/  js/           igual que antes
-api/                         los endpoints, uno por archivo (antes eran .php)
+api/
+  [ruta].js                  la única función: reparte /api/<ruta> al endpoint
+  _endpoints/                los endpoints, uno por archivo (antes eran .php)
   _lib/                      lo compartido (era api/db.php)
     db.js                    conexión a Postgres
     sesion.js                cookie firmada (era $_SESSION)
@@ -26,9 +28,13 @@ sql/schema_postgres.sql      el esquema traducido de MySQL
 migracion/                   MySQL → Supabase, para los datos que ya existen
 ```
 
-Vercel sirve los `.html` como archivos estáticos y convierte cada `api/*.js` en
-una función. Las carpetas que empiezan con `_` no se publican como endpoints,
-por eso `_lib` es código compartido y no rutas.
+Vercel sirve los `.html` como archivos estáticos y publica `api/[ruta].js` como
+**una sola función** que atiende todas las rutas `/api/...`. Es así porque el
+plan Hobby no deja más de 12 funciones por deploy y los endpoints son 18. Las
+carpetas que empiezan con `_` Vercel no las publica: son código común.
+
+Para agregar un endpoint: crear el archivo en `api/_endpoints/` y sumarlo al
+mapa `RUTAS` de `api/[ruta].js`.
 
 ## Equivalencias
 

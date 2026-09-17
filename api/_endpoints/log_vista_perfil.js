@@ -1,7 +1,7 @@
 /* Antes: api/log_vista_perfil.php */
 
-import { sql } from "./_lib/db.js";
-import { json, cuerpo } from "./_lib/http.js";
+import { sql } from "../_lib/db.js";
+import { json, cuerpo } from "../_lib/http.js";
 
 export default async function handler(req, res) {
   const providerId = (cuerpo(req).provider_id || "").trim();

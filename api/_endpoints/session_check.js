@@ -1,7 +1,7 @@
 /* Antes: api/session_check.php */
 
-import { json } from "./_lib/http.js";
-import { leerSesion } from "./_lib/sesion.js";
+import { json } from "../_lib/http.js";
+import { leerSesion } from "../_lib/sesion.js";
 
 export default async function handler(req, res) {
   const s = leerSesion(req);

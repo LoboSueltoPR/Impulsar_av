@@ -1,7 +1,7 @@
 /* Antes: api/get_ratings.php */
 
-import { sql } from "./_lib/db.js";
-import { json } from "./_lib/http.js";
+import { sql } from "../_lib/db.js";
+import { json } from "../_lib/http.js";
 
 export default async function handler(req, res) {
   const filas = await sql`

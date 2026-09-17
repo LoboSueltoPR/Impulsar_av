@@ -1,9 +1,9 @@
 /* Antes: api/eliminar_oficio.php */
 
-import { sql } from "./_lib/db.js";
-import { json, error, cuerpo, soloMetodo } from "./_lib/http.js";
-import { exigirTrabajador } from "./_lib/sesion.js";
-import { borrar, BUCKETS } from "./_lib/archivos.js";
+import { sql } from "../_lib/db.js";
+import { json, error, cuerpo, soloMetodo } from "../_lib/http.js";
+import { exigirTrabajador } from "../_lib/sesion.js";
+import { borrar, BUCKETS } from "../_lib/archivos.js";
 
 export default async function handler(req, res) {
   if (!soloMetodo(req, res, "POST")) return;

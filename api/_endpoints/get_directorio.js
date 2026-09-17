@@ -5,9 +5,9 @@
  * en una base relacional en vez de pasar a documentos.
  */
 
-import { sql, decodificarOficios } from "./_lib/db.js";
-import { json } from "./_lib/http.js";
-import { BUCKETS, urlPublica } from "./_lib/archivos.js";
+import { sql, decodificarOficios } from "../_lib/db.js";
+import { json } from "../_lib/http.js";
+import { BUCKETS, urlPublica } from "../_lib/archivos.js";
 
 export default async function handler(req, res) {
   const filas = await sql`

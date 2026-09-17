@@ -1,8 +1,8 @@
 /* Antes: api/log_busqueda.php */
 
-import { sql } from "./_lib/db.js";
-import { json, cuerpo } from "./_lib/http.js";
-import { leerSesion } from "./_lib/sesion.js";
+import { sql } from "../_lib/db.js";
+import { json, cuerpo } from "../_lib/http.js";
+import { leerSesion } from "../_lib/sesion.js";
 
 export default async function handler(req, res) {
   const termino = (cuerpo(req).termino || "").trim();

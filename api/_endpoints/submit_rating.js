@@ -6,8 +6,8 @@
  * bloqueaba a todos los demás. ipDelCliente() lee la IP real del header.
  */
 
-import { sql } from "./_lib/db.js";
-import { json, error, cuerpo, soloMetodo, ipDelCliente } from "./_lib/http.js";
+import { sql } from "../_lib/db.js";
+import { json, error, cuerpo, soloMetodo, ipDelCliente } from "../_lib/http.js";
 
 export default async function handler(req, res) {
   if (!soloMetodo(req, res, "POST")) return;
